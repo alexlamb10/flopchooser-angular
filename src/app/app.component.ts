@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FLOP_DATA } from './movies';
 
 @Component({
   selector: 'fb-root',
