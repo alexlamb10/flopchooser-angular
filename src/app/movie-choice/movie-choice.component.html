@@ -4,8 +4,8 @@
         <h2>Select the Movie with a lower Rating!</h2>
         <div class="play-again" *ngIf="chosen">
             <button (click)="playAgain()">Play Again</button>
-            <p *ngIf="correct">Correct</p>
-            <p *ngIf="incorrect">Incorrect</p>
+            <p *ngIf="correct">Correct!</p>
+            <p *ngIf="incorrect">Incorrect!</p>
         </div>
         <div class="pics">
             <div class="movie">
@@ -21,3 +21,4 @@
         </div>
     </div>
 </div>
+<fb-footer></fb-footer>
