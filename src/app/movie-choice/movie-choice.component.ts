@@ -14,6 +14,9 @@ export class MovieChoiceComponent implements OnInit {
   imageTwoName = ""
   imageOneStars = 0;
   imageTwoStars = 0;
+  chosen = false;
+  correct = false;
+  incorrect = false;
 
   findImages(): void {
     let num2 = -1;
@@ -33,6 +36,18 @@ export class MovieChoiceComponent implements OnInit {
     this.imageTwoName = FLOP_DATA[num2].title;
     this.imageOneStars = FLOP_DATA[num].stars
     this.imageTwoStars = FLOP_DATA[num2].stars
+  }
+
+  checkAnswer(imageNum: string): void {
+    if(imageNum === 'one'){
+      if(this.imageOneStars < this.imageTwoStars){
+        this.chosen = true;
+        this.correct = true;
+      }else{
+        this.chosen = true;
+        this.incorrect = true;
+      }
+    }
   }
 
   constructor() { }

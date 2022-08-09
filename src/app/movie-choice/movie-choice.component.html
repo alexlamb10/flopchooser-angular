@@ -2,17 +2,19 @@
     <h1>Welcome to Flobuster</h1>
     <div class="game">
         <h2>Select the Movie with a lower Rating!</h2>
-        <div class="play-again">
+        <div class="play-again" *ngIf="chosen">
             <button>Play Again</button>
-            <p>Corrrct</p>
-            <p>Incorrect</p>
+            <p *ngIf="correct">Corrrct</p>
+            <p *ngIf="incorrect">Incorrect</p>
         </div>
         <div class="pics">
-            <div>
-                <img [src]="imageOne" alt="">
+            <div class="movie">
+                <img (click)="checkAnswer('one')" value="one" [src]="imageOne" [alt]="imageOneName">
+                <h4>{{imageOneName}}</h4>
             </div>
-            <div>
-                <img [src]="imageTwo" alt="">
+            <div class="movie">
+                <img (click)="checkAnswer('two')" value="two" [src]="imageTwo" [alt]="imageTwoName">
+                <h4>{{imageTwoName}}</h4>
             </div>
         </div>
     </div>
