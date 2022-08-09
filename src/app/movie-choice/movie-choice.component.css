@@ -7,4 +7,24 @@
 
 .game{
     margin-top: 20vh;
+    width: 30%;
+}
+.game h2 {
+    text-align: center;
+}
+
+.play-again {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pics {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
