@@ -3,7 +3,7 @@
     <div class="game">
         <h2>Select the Movie with a lower Rating!</h2>
         <div class="play-again" *ngIf="chosen">
-            <button>Play Again</button>
+            <button (click)="playAgain()">Play Again</button>
             <p *ngIf="correct">Correct</p>
             <p *ngIf="incorrect">Incorrect</p>
         </div>
@@ -11,10 +11,12 @@
             <div class="movie">
                 <img (click)="checkAnswer('one')" value="one" [src]="imageOne" [alt]="imageOneName">
                 <h4>{{imageOneName}}</h4>
+                <p *ngIf="chosen">Rating: {{imageOneStars}}/10</p>
             </div>
             <div class="movie">
                 <img (click)="checkAnswer('two')" value="two" [src]="imageTwo" [alt]="imageTwoName">
                 <h4>{{imageTwoName}}</h4>
+                <p *ngIf="chosen">Rating: {{imageTwoStars}}/10</p>
             </div>
         </div>
     </div>

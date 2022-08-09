@@ -39,20 +39,29 @@ export class MovieChoiceComponent implements OnInit {
   }
 
   checkAnswer(imageNum: string): void {
-    this.chosen = true;
-    if(imageNum === 'one'){
-      if(this.imageOneStars < this.imageTwoStars){
-        this.correct = true;
+    if(!this.chosen){
+      this.chosen = true;
+      if(imageNum === 'one'){
+        if(this.imageOneStars < this.imageTwoStars){
+          this.correct = true;
+        }else{
+          this.incorrect = true;
+        }
       }else{
-        this.incorrect = true;
-      }
-    }else{
-      if(this.imageTwoStars < this.imageOneStars){
-        this.correct = true;
-      }else{
-        this.incorrect = true
+        if(this.imageTwoStars < this.imageOneStars){
+          this.correct = true;
+        }else{
+          this.incorrect = true
+        }
       }
     }
+  }
+
+  playAgain(): void {
+    this.chosen = false;
+    this.correct = false;
+    this.incorrect = false;
+    this.findImages();
   }
 
   constructor() { }
